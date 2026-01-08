@@ -1,16 +1,63 @@
-# React + Vite
+# 🌱 Agro-Guard AI: Smart Grain Storage System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Agro-Guard AI** is an intelligent IoT dashboard designed to prevent post-harvest losses in grain storage. Unlike traditional monitoring systems, Agro-Guard uses **Predictive AI** and **Real-time Anomaly Detection** to forecast storage conditions and recommend preservation actions.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. 🧠 Predictive Inventory AI (Linear Regression)
+* **What it does:** Tracks consumption rates in real-time.
+* **The AI:** Uses a Linear Regression algorithm to calculate the slope of depletion ($y = mx + c$).
+* **Result:** accurately predicts the exact time until the silo is empty (e.g., *"Empty in 4 hours 12 mins"*), allowing for proactive restocking.
 
-## React Compiler
+### 2. 🛡️ Anomaly Detection Engine (Z-Score Analysis)
+* **What it does:** Monitors environmental sensors for statistical outliers.
+* **The AI:** Maintains a rolling window of historical data and calculates Standard Deviation ($\sigma$) and Z-Scores.
+* **Result:** Triggers an immediate "Security Breach" or "Fire Risk" alert if values deviate significantly from the learned norm (Z-Score > 3), catching issues that static threshold rules miss.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. 👨‍⚕️ Prescriptive Crop Doctor
+* **What it does:** Analyzes Vapor Pressure Deficit (VPD) and Dew Point.
+* **The Logic:** Combines sensor data to calculate complex agricultural metrics.
+* **Result:** Doesn't just show data; it prescribes solutions (e.g., *"Risk of Mold detected. Open ventilation immediately to lower VPD below 0.4 kPa"*).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+* **Frontend:** React.js (Vite), CSS3 (Glassmorphism UI)
+* **Hardware Interface:** Web Serial API (No backend server required)
+* **Algorithms:** JavaScript (Custom Linear Regression & Statistical Analysis modules)
+* **Hardware:** Arduino Uno, Ultrasonic Sensor (HC-SR04), DHT11, LDR.
+
+---
+
+## ⚡ Getting Started
+
+### Prerequisites
+* Node.js installed on your machine.
+* Arduino IDE (to upload the sketch).
+
+### Installation
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Ipshita-Das/Agro-Guard.git](https://github.com/Ipshita-Das/Agro-Guard.git)
+    cd Agro-Guard
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the Dashboard:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Connect Hardware:**
+    * Connect your Arduino via USB.
+    * Click the **"CONNECT INTERFACE"** button on the dashboard.
+    * Select your COM port.
+
+---
+
+## 📸 Screenshots
