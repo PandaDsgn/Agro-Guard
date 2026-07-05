@@ -4,4 +4,4 @@ joblib
 pandas
 scikit-learn
 gunicorn
-pyserial
+python-dotenv
