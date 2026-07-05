@@ -128,12 +128,13 @@ const CROPS = [
 
 /* ------------------------------------------------------------------ */
 /*  API BASE                                                            */
-/*  Was hardcoded to the deployed HF Space, so local backend edits      */
-/*  never actually reached the frontend. Defaults to your local Flask   */
-/*  server; override with VITE_API_BASE in a .env file when you deploy  */
-/*  again.                                                              */
+/*  Points at the always-on cloud backend (Render) by default, since    */
+/*  that's what's actually reachable once this frontend is deployed.    */
+/*  Override with VITE_API_BASE in a .env file if you ever point it     */
+/*  somewhere else (e.g. back to localhost while developing).           */
 /* ------------------------------------------------------------------ */
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:7860";
+const API_BASE =
+  import.meta.env.VITE_API_BASE || "https://agro-guard-backend.onrender.com";
 
 /* ------------------------------------------------------------------ */
 /*  HELPERS                                                            */
