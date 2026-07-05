@@ -134,7 +134,7 @@ const CROPS = [
 /*  somewhere else (e.g. back to localhost while developing).           */
 /* ------------------------------------------------------------------ */
 const API_BASE =
-  import.meta.env.VITE_API_BASE || "https://agro-guard-backend.onrender.com";
+  import.meta.env.VITE_API_BASE || "https://agro-guard.onrender.com";
 
 /* ------------------------------------------------------------------ */
 /*  HELPERS                                                            */
