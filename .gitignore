@@ -1,24 +1,64 @@
-# Logs
-logs
-*.log
+# ============================================================
+# SECRETS — never commit real env files, only the .example ones
+# ============================================================
+.env
+.env.local
+.env.*.local
+backend/.env
+agent/.env
+!.env.example
+!backend/.env.example
+!agent/.env.example
+
+# ============================================================
+# FRONTEND — Vite / Node
+# ============================================================
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# npm/yarn/pnpm logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ============================================================
+# BACKEND / AGENT / MODEL-TRAINING — Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
 
-# Editor directories and files
-.vscode/*
+# virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter, if you ever explore the dataset in a notebook
+.ipynb_checkpoints/
+
+# NOTE: agro_guard_model.pkl and fruit_mapping.pkl are intentionally
+# NOT ignored — Render needs them committed inside backend/ to deploy.
+
+# ============================================================
+# EDITORS / OS
+# ============================================================
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
+*.swp
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+
+# ============================================================
+# ARDUINO — build artifacts (sketches themselves are kept)
+# ============================================================
+*.hex
+*.elf
+build/
